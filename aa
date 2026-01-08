@@ -1,0 +1,77 @@
+  <div
+                        class="group flex flex-col bg-white dark:bg-[#1a2632] rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.04)] dark:shadow-none border border-transparent dark:border-gray-800 overflow-hidden hover:shadow-lg transition-all duration-300">
+                        <div class="h-32 w-full bg-cover bg-center relative"
+                            data-alt="Abstract security shield concept blue background"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCYSzuhLCooY1JimGa892esCZP_GK2KEjCNCPSWQZn17lMqn5LRvspSxKKiiMD4raARRjR2IMMUYK7ZbFaGeDMn8mipbJAJk0m5CMRqQtwQFbuCVMGKsZsSW6f-0XriPE49v30w8QZwb4ogb1idRtwMuRqlYoj7uWhpHDPhLvUOKzOVNMzvEV2osYHebaKXBqbvPBqV6CHEIzhDepqrD2d_M2ySCowG3GUVbA3MGGV9B7No6A6lEbE6qy44I-c50Unp_u1W0dwlovs');">
+                            <div class="absolute inset-0 bg-primary/80 mix-blend-multiply"></div>
+                            <h3 class="absolute bottom-3 left-4 text-white font-bold text-lg flex items-center gap-2">
+                                <span class="material-symbols-outlined">verified_user</span> Age Verification
+                            </h3>
+                        </div>
+                        <div class="p-5 flex flex-col gap-4 flex-1">
+                            <p class="text-sm text-[#617589] dark:text-gray-400">Validate if a user is eligible based on
+                                their age input (18+).</p>
+                            <div class="flex flex-col gap-3 mt-auto">
+                                <label class="flex flex-col gap-1">
+                                    <span class="text-xs font-semibold text-[#111418] dark:text-gray-300">Enter
+                                        Age</span>
+                                    <input
+                                        id="ageInput"
+                                        class="w-full h-10 rounded-lg border border-[#dbe0e6] dark:border-gray-600 bg-white dark:bg-[#101922] px-3 text-sm placeholder:text-[#617589] focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all dark:text-white"
+                                        placeholder="e.g. 21"
+                                        type="number" />
+                                </label>
+                                <button
+                                    id="checkEligibilityButton"
+                                    onclick="ageSend()"
+                                    class="h-10 w-full rounded-lg bg-[#111418] dark:bg-gray-700 hover:bg-black dark:hover:bg-gray-600 text-white text-sm font-bold shadow-sm transition-colors">
+                                    Check Eligibility
+                                </button>
+                                <div
+                                    id="accessMessage"
+                                    class="hidden p-2 rounded bg-green-100 text-green-800 text-xs font-medium text-center border border-green-200">
+                                    Access Granted
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+function ageSend(){
+    const input = document.getElementById("ageInput");
+    const button = document.getElementById("checkEligibilityButton");
+
+    const age = Number(input.value);
+
+    button.classList.remove(
+        "bg-green-600",
+        "bg-red-600",
+        "hover:bg-green-700",
+        "hover:bg-red-700"
+    );
+
+    if (!input.value.trim()) {
+        button.textContent = "Check Eligibility";
+        input.addEventListener("input", resetButton);
+
+        function resetButton() {
+            if (!input.value.trim()) {
+                button.textContent = "Check Eligibility";
+
+                button.classList.remove(
+                    "bg-green-600",
+                    "bg-red-600",
+                    "hover:bg-green-700",
+                    "hover:bg-red-700"
+                );
+
+                button.classList.add("bg-[#111418]");
+            }
+        }
+
+    //    button.classList.add("bg-[#111418]");
+        return;
+    }

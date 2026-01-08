@@ -1,36 +1,34 @@
-function nameSend() {
-    const input = document.getElementById("nameInput");
-    const message = document.getElementById("greetMessage");
+// ------- METODOS PARA VALIDAR NOMBRE -------
+const nameInput = document.getElementById("nameInput");
+const greetMessage = document.getElementById("greetMessage");
 
-    if (input.value.trim() !== "") {
+let typingTimer;
+const TYPING_DELAY = 800;
 
-        const nameFormatted = formatName(input.value)
+nameInput.addEventListener("input", handleTyping);
 
-        message.textContent = `Hi! ${nameFormatted}`;
-        input.value = "";
-    } else {
-        message.textContent = "Waiting for input...";
-    }
+function handleTyping() {
+    // Usuario está escribiendo
+    greetMessage.textContent = "Typing...";
+
+    clearTimeout(typingTimer);
+
+    typingTimer = setTimeout(() => {
+        greetMessage.textContent = "Waiting for input...";
+    }, TYPING_DELAY);
 }
 
-function ageSend(){
-    const input = document.getElementById("ageInput")
-    const message = document.getElementById("checkEligibilityButton")
-    const messageOlder = document.getElementById("accessMessage")
+function nameSend() {
+    const value = nameInput.value;
 
-    const age = Number(input.value)
+    clearTimeout(typingTimer);
 
-    if (!input.value.trim()) {
-        message.classList.remove("hidden");
-        return;
-    }
-
-    if (age >= 18) {
-        message.textContent = "Access Granted";
-        message.classList.remove("hidden");
-   } else {
-        message.textContent = "Access Denied";
-        message.classList.remove("hidden");
+    if (value.trim() !== "") {
+        const nameFormatted = formatName(value);
+        greetMessage.textContent = `Hi! ${nameFormatted}`;
+        nameInput.value = "";
+    } else {
+        greetMessage.textContent = "Waiting for input...";
     }
 }
 
@@ -39,7 +37,90 @@ function formatName(name) {
     return name.charAt(0).toUpperCase() + name.slice(1);
 }
 
+// ------- METODOS PARA VALIDAR EDAD -------
+const input = document.getElementById("ageInput");
+const button = document.getElementById("checkEligibilityButton");
 
+// Click del botón
+button.addEventListener("click", validateAge);
 
+// Cambios en el input (escribir / borrar)
+input.addEventListener("input", resetIfEmpty);
 
+function validateAge() {
+    const age = Number(input.value);
+
+    clearColors();
+
+    if (!input.value.trim()) return;
+
+    if (age >= 18) {
+        button.textContent = "Access Granted";
+        button.classList.add("bg-green-600", "hover:bg-green-700");
+    } else {
+        button.textContent = "Access Denied";
+        button.classList.add("bg-red-600", "hover:bg-red-700");
+    }
+}
+
+function resetIfEmpty() {
+    if (!input.value.trim()) {
+        clearColors();
+        button.textContent = "Check Eligibility";
+        button.classList.add("bg-[#111418]");
+    }
+}
+
+function clearColors() {
+    button.classList.remove(
+        "bg-[#111418]",
+        "bg-green-600",
+        "bg-red-600",
+        "hover:bg-green-700",
+        "hover:bg-red-700"
+    );
+}
+
+// ------- METODOS PARA CONTADOR -------
+const counterValue = document.getElementById("counterValue");
+const incrementBtn = document.getElementById("incrementBtn");
+const decrementBtn = document.getElementById("decrementBtn");
+const resetBtn = document.getElementById("resetBtn");
+
+let count = 0;
+
+// Clicks de botones
+incrementBtn.addEventListener("click", increment);
+decrementBtn.addEventListener("click", decrement);
+resetBtn.addEventListener("click", resetCounter);
+
+function increment() {
+    count++;
+    updateCounter();
+}
+
+function decrement() {
+    count--;
+    updateCounter();
+}
+
+function resetCounter() {
+    count = 0;
+    updateCounter();
+}
+
+function updateCounter() {
+    counterValue.textContent = count;
+
+    // Limpia colores anteriores
+    counterValue.classList.remove("text-blue-500", "text-red-500");
+
+    if (count > 0) {
+        counterValue.classList.add("text-blue-500");
+    } else if (count < 0) {
+        counterValue.classList.add("text-red-500");
+    }
+}
+
+// ------- METODOS PARA CONTADOR -------
 

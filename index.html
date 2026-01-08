@@ -3,23 +3,23 @@
 <html class="light" lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>JavaScript Practice Dashboard</title>
 
 
-    <link href="https://fonts.googleapis.com" rel="preconnect" />
-    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap"
-        rel="stylesheet" />
+          rel="stylesheet"/>
 
 
     <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-        rel="stylesheet" />
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+            rel="stylesheet"/>
     <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-        rel="stylesheet" />
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+            rel="stylesheet"/>
 
 
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
@@ -71,317 +71,330 @@
 </head>
 
 <body
-    class="bg-background-light dark:bg-background-dark font-display text-[#111418] dark:text-gray-100 transition-colors duration-200">
-    <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+        class="bg-background-light dark:bg-background-dark font-display text-[#111418] dark:text-gray-100 transition-colors duration-200">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
 
 
-        <header
+    <header
             class="flex items-center justify-between whitespace-nowrap border-b border-solid border-[#f0f2f4] dark:border-gray-800 bg-white dark:bg-[#1a2632] px-6 py-4 lg:px-10 sticky top-0 z-50">
-            <div class="flex items-center gap-4">
-                <div class="size-10 bg-primary/10 rounded-lg flex items-center justify-center text-primary">
-                    <span class="material-symbols-outlined text-2xl">javascript</span>
-                </div>
-                <h1
-                    class="text-[#111418] dark:text-white text-lg lg:text-xl font-bold leading-tight tracking-[-0.015em]">
-                    JS Practice Dashboard</h1>
+        <div class="flex items-center gap-4">
+            <div class="size-10 bg-primary/10 rounded-lg flex items-center justify-center text-primary">
+                <span class="material-symbols-outlined text-2xl">javascript</span>
             </div>
-            <button
+            <h1
+                    class="text-[#111418] dark:text-white text-lg lg:text-xl font-bold leading-tight tracking-[-0.015em]">
+                JS Practice Dashboard</h1>
+        </div>
+        <button
                 class="flex items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-blue-600 transition-colors gap-2">
-                <span class="material-symbols-outlined text-[20px]">dark_mode</span>
-                <span class="hidden sm:inline truncate">Toggle Theme</span>
-            </button>
-        </header>
+            <span class="material-symbols-outlined text-[20px]">dark_mode</span>
+            <span class="hidden sm:inline truncate">Toggle Theme</span>
+        </button>
+    </header>
 
 
-        <main class="flex-1 px-4 py-8 md:px-10 lg:px-20 xl:px-40">
-            <div class="max-w-[1200px] mx-auto flex flex-col gap-8">
+    <main class="flex-1 px-4 py-8 md:px-10 lg:px-20 xl:px-40">
+        <div class="max-w-[1200px] mx-auto flex flex-col gap-8">
 
 
-                <div class="flex flex-col gap-2">
-                    <h2
+            <div class="flex flex-col gap-2">
+                <h2
                         class="text-[#111418] dark:text-white tracking-tight text-[28px] md:text-[32px] font-bold leading-tight">
-                        Interactive Utilities</h2>
-                    <p class="text-[#617589] dark:text-gray-400 text-base">A collection of vanilla JavaScript practice
-                        modules. Interact with the cards below.</p>
+                    Interactive Utilities</h2>
+                <p class="text-[#617589] dark:text-gray-400 text-base">A collection of vanilla JavaScript practice
+                    modules. Interact with the cards below.</p>
+            </div>
+
+            <!-- ------- SALUDO NOMBRE ------- -->
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+
+                <div
+                        class="group flex flex-col bg-white dark:bg-[#1a2632] rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.04)] dark:shadow-none border border-transparent dark:border-gray-800 overflow-hidden hover:shadow-lg transition-all duration-300">
+                    <div class="h-32 w-full bg-cover bg-center relative"
+                         data-alt="Laptop screen showing code editor with colorful syntax"
+                         style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAnZ7_pBWrPSy5z1SEwRoaNDFzYZeFtaXS9JmHprEqJUkHYiAeWhEKzd2MmXOqy2tThlem_5NTfS2zNY6UFVwymQdLlk_KiKaAg_RKTjTPbS1bBtrg38lkmJwjrf4yeOfyeHplcDYkfMkR73AiLyOqql43WX1sspsuIDlqmWx5_p7Auo9XWXUp30fEDYi0LnsdDGqZfo7ogifGgFzeORbiK2qb3bcGyxWaguPIccq4L4HUTyvwFeW9qL0muJ61xAsNUlqp4vjwmvW4');">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <h3 class="absolute bottom-3 left-4 text-white font-bold text-lg flex items-center gap-2">
+                            <span class="material-symbols-outlined">waving_hand</span> Hello World Generator
+                        </h3>
+                    </div>
+                    <div class="p-5 flex flex-col gap-4 flex-1">
+                        <p class="text-sm text-[#617589] dark:text-gray-400">Enter your name below to generate a
+                            custom greeting message.</p>
+                        <div class="flex flex-col gap-3 mt-auto">
+
+                            <input id="nameInput"
+                                   class="w-full h-10 rounded-lg border border-[#dbe0e6] dark:border-gray-600 bg-white dark:bg-[#101922] px-3 text-sm placeholder:text-[#617589] focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all dark:text-white"
+                                   placeholder="Enter your name..." type="text"/>
+
+                            <button id="greetMeButton" onclick="nameSend()"
+                                    class="h-10 w-full rounded-lg bg-primary hover:bg-blue-600 text-white text-sm font-bold shadow-sm transition-colors flex items-center justify-center gap-2">
+                                Greet Me
+                            </button>
+
+                            <div id="greetMessage"
+                                 class="bg-background-light dark:bg-[#101922] p-3 rounded-lg text-sm text-center text-[#111418] dark:text-gray-300 font-medium min-h-[44px] flex items-center justify-center border border-dashed border-gray-300 dark:border-gray-700">
+                                Waiting for input...
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ------- CONTADOR ------- -->
+                <div
+                        class="group flex flex-col bg-white dark:bg-[#1a2632] rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.04)] dark:shadow-none border border-transparent dark:border-gray-800 overflow-hidden hover:shadow-lg transition-all duration-300">
+
+                    <div class="p-5 border-b border-[#f0f2f4] dark:border-gray-700 flex justify-between items-center">
+                        <h3 class="font-bold text-lg text-[#111418] dark:text-white flex items-center gap-2">
+                            <span class="material-symbols-outlined text-primary">calculate</span>
+                            Simple Counter
+                        </h3>
+                    </div>
+
+                    <div class="p-6 flex flex-col items-center justify-center gap-6 flex-1">
+                        <div
+                                class="size-24 rounded-full bg-background-light dark:bg-[#101922] flex items-center justify-center border-4 border-primary/20">
+            <span
+                    id="counterValue"
+                    class="text-4xl font-bold text-[#111418] dark:text-white">
+                0
+            </span>
+                        </div>
+
+                        <div class="flex items-center gap-2 w-full">
+                            <button
+                                    id="decrementBtn"
+                                    class="flex-1 h-10 rounded-lg bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 hover:bg-red-200 dark:hover:bg-red-900/50 font-bold transition-colors flex items-center justify-center">
+                                <span class="material-symbols-outlined">remove</span>
+                            </button>
+
+                            <button
+                                    id="resetBtn"
+                                    class="flex-1 h-10 rounded-lg bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600 font-bold transition-colors text-sm">
+                                Reset
+                            </button>
+
+                            <button
+                                    id="incrementBtn"
+                                    class="flex-1 h-10 rounded-lg bg-primary/10 dark:bg-primary/20 text-primary hover:bg-primary/20 dark:hover:bg-primary/30 font-bold transition-colors flex items-center justify-center">
+                                <span class="material-symbols-outlined">add</span>
+                            </button>
+                        </div>
+                    </div>
                 </div>
 
 
-                <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-                    
-                    <div
-                        class="group flex flex-col bg-white dark:bg-[#1a2632] rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.04)] dark:shadow-none border border-transparent dark:border-gray-800 overflow-hidden hover:shadow-lg transition-all duration-300">
-                        <div class="h-32 w-full bg-cover bg-center relative"
-                            data-alt="Laptop screen showing code editor with colorful syntax"
-                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAnZ7_pBWrPSy5z1SEwRoaNDFzYZeFtaXS9JmHprEqJUkHYiAeWhEKzd2MmXOqy2tThlem_5NTfS2zNY6UFVwymQdLlk_KiKaAg_RKTjTPbS1bBtrg38lkmJwjrf4yeOfyeHplcDYkfMkR73AiLyOqql43WX1sspsuIDlqmWx5_p7Auo9XWXUp30fEDYi0LnsdDGqZfo7ogifGgFzeORbiK2qb3bcGyxWaguPIccq4L4HUTyvwFeW9qL0muJ61xAsNUlqp4vjwmvW4');">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                            <h3 class="absolute bottom-3 left-4 text-white font-bold text-lg flex items-center gap-2">
-                                <span class="material-symbols-outlined">waving_hand</span> Hello World Generator
-                            </h3>
-                        </div>
-                        <div class="p-5 flex flex-col gap-4 flex-1">
-                            <p class="text-sm text-[#617589] dark:text-gray-400">Enter your name below to generate a
-                                custom greeting message.</p>
-                            <div class="flex flex-col gap-3 mt-auto">
 
-                                <input id="nameInput"
-                                    class="w-full h-10 rounded-lg border border-[#dbe0e6] dark:border-gray-600 bg-white dark:bg-[#101922] px-3 text-sm placeholder:text-[#617589] focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all dark:text-white"
-                                    placeholder="Enter your name..." type="text" />
-                                
-                                    <button id="greetMeButton" onclick="nameSend()"
-                                    class="h-10 w-full rounded-lg bg-primary hover:bg-blue-600 text-white text-sm font-bold shadow-sm transition-colors flex items-center justify-center gap-2">
-                                    Greet Me
-                                </button>
-
-                                <div id="greetMessage"
-                                    class="bg-background-light dark:bg-[#101922] p-3 rounded-lg text-sm text-center text-[#111418] dark:text-gray-300 font-medium min-h-[44px] flex items-center justify-center border border-dashed border-gray-300 dark:border-gray-700">
-                                    Waiting for input...
-                                </div>
-                            </div>
-                        </div>
+                <!-- ------- VERIFICACIÓN DE EDAD ------- -->
+                <div class="group flex flex-col bg-white dark:bg-[#1a2632] rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.04)] dark:shadow-none border border-transparent dark:border-gray-800 overflow-hidden hover:shadow-lg transition-all duration-300">
+                    <div class="h-32 w-full bg-cover bg-center relative"
+                         style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCYSzuhLCooY1JimGa892esCZP_GK2KEjCNCPSWQZn17lMqn5LRvspSxKKiiMD4raARRjR2IMMUYK7ZbFaGeDMn8mipbJAJk0m5CMRqQtwQFbuCVMGKsZsSW6f-0XriPE49v30w8QZwb4ogb1idRtwMuRqlYoj7uWhpHDPhLvUOKzOVNMzvEV2osYHebaKXBqbvPBqV6CHEIzhDepqrD2d_M2ySCowG3GUVbA3MGGV9B7No6A6lEbE6qy44I-c50Unp_u1W0dwlovs');">
+                        <div class="absolute inset-0 bg-primary/80 mix-blend-multiply"></div>
+                        <h3 class="absolute bottom-3 left-4 text-white font-bold text-lg flex items-center gap-2">
+                            <span class="material-symbols-outlined">verified_user</span> Age Verification
+                        </h3>
                     </div>
 
+                    <div class="p-5 flex flex-col gap-4 flex-1">
+                        <p class="text-sm text-[#617589] dark:text-gray-400">
+                            Validate if a user is eligible based on their age input (18+).
+                        </p>
 
-                    <div
-                        class="group flex flex-col bg-white dark:bg-[#1a2632] rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.04)] dark:shadow-none border border-transparent dark:border-gray-800 overflow-hidden hover:shadow-lg transition-all duration-300">
-                        <div
-                            class="p-5 border-b border-[#f0f2f4] dark:border-gray-700 flex justify-between items-center">
-                            <h3 class="font-bold text-lg text-[#111418] dark:text-white flex items-center gap-2">
-                                <span class="material-symbols-outlined text-primary">calculate</span> Simple Counter
-                            </h3>
-                        </div>
-                        <div class="p-6 flex flex-col items-center justify-center gap-6 flex-1">
-                            <div
-                                class="size-24 rounded-full bg-background-light dark:bg-[#101922] flex items-center justify-center border-4 border-primary/20">
-                                <span class="text-4xl font-bold text-[#111418] dark:text-white">0</span>
-                            </div>
-                            <div class="flex items-center gap-2 w-full">
-                                <button
-                                    class="flex-1 h-10 rounded-lg bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 hover:bg-red-200 dark:hover:bg-red-900/50 font-bold transition-colors flex items-center justify-center">
-                                    <span class="material-symbols-outlined">remove</span>
-                                </button>
-                                <button
-                                    class="flex-1 h-10 rounded-lg bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600 font-bold transition-colors text-sm">
-                                    Reset
-                                </button>
-                                <button
-                                    class="flex-1 h-10 rounded-lg bg-primary/10 dark:bg-primary/20 text-primary hover:bg-primary/20 dark:hover:bg-primary/30 font-bold transition-colors flex items-center justify-center">
-                                    <span class="material-symbols-outlined">add</span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-
-
-
-                    <div
-                        class="group flex flex-col bg-white dark:bg-[#1a2632] rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.04)] dark:shadow-none border border-transparent dark:border-gray-800 overflow-hidden hover:shadow-lg transition-all duration-300">
-                        <div class="h-32 w-full bg-cover bg-center relative"
-                            data-alt="Abstract security shield concept blue background"
-                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCYSzuhLCooY1JimGa892esCZP_GK2KEjCNCPSWQZn17lMqn5LRvspSxKKiiMD4raARRjR2IMMUYK7ZbFaGeDMn8mipbJAJk0m5CMRqQtwQFbuCVMGKsZsSW6f-0XriPE49v30w8QZwb4ogb1idRtwMuRqlYoj7uWhpHDPhLvUOKzOVNMzvEV2osYHebaKXBqbvPBqV6CHEIzhDepqrD2d_M2ySCowG3GUVbA3MGGV9B7No6A6lEbE6qy44I-c50Unp_u1W0dwlovs');">
-                            <div class="absolute inset-0 bg-primary/80 mix-blend-multiply"></div>
-                            <h3 class="absolute bottom-3 left-4 text-white font-bold text-lg flex items-center gap-2">
-                                <span class="material-symbols-outlined">verified_user</span> Age Verification
-                            </h3>
-                        </div>
-                        <div class="p-5 flex flex-col gap-4 flex-1">
-                            <p class="text-sm text-[#617589] dark:text-gray-400">Validate if a user is eligible based on
-                                their age input (18+).</p>
-                            <div class="flex flex-col gap-3 mt-auto">
-                                <label class="flex flex-col gap-1">
-                                    <span class="text-xs font-semibold text-[#111418] dark:text-gray-300">Enter
-                                        Age</span>
-                                    <input
+                        <div class="flex flex-col gap-3 mt-auto">
+                            <label class="flex flex-col gap-1">
+                                <span class="text-xs font-semibold text-[#111418] dark:text-gray-300">
+                                    Enter Age
+                                </span>
+                                <input
                                         id="ageInput"
-                                        class="w-full h-10 rounded-lg border border-[#dbe0e6] dark:border-gray-600 bg-white dark:bg-[#101922] px-3 text-sm placeholder:text-[#617589] focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all dark:text-white"
-                                        placeholder="e.g. 21" type="number" />
-                                </label>
-                                <button
+                                        type="number"
+                                        placeholder="e.g. 21"
+                                        class="w-full h-10 rounded-lg border border-[#dbe0e6] dark:border-gray-600 bg-white dark:bg-[#101922] px-3 text-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all dark:text-white"
+                                />
+                            </label>
+                            <button
                                     id="checkEligibilityButton"
-                                    onclick="ageSend()"
-                                    class="h-10 w-full rounded-lg bg-[#111418] dark:bg-gray-700 hover:bg-black dark:hover:bg-gray-600 text-white text-sm font-bold shadow-sm transition-colors">
-                                    Check Eligibility
-                                </button>
-                                <div
-                                    id="accessMessage"
-                                    class="hidden p-2 rounded bg-green-100 text-green-800 text-xs font-medium text-center border border-green-200">
-                                    Access Granted
-                                </div>
-                            </div>
+                                    class="h-10 w-full rounded-lg bg-[#111418] dark:bg-gray-700 text-white text-sm font-bold shadow-sm transition-colors">
+                                Check Eligibility
+                            </button>
                         </div>
                     </div>
+                </div>
 
 
-                    <div
+                <!-- ------- LISTA/CHECKLIST ------- -->
+                <div
                         class="group flex flex-col bg-white dark:bg-[#1a2632] rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.04)] dark:shadow-none border border-transparent dark:border-gray-800 overflow-hidden hover:shadow-lg transition-all duration-300 md:col-span-2 xl:col-span-2">
-                        <div
+                    <div
                             class="p-5 border-b border-[#f0f2f4] dark:border-gray-700 flex justify-between items-center bg-gray-50 dark:bg-gray-800/50">
-                            <h3 class="font-bold text-lg text-[#111418] dark:text-white flex items-center gap-2">
-                                <span class="material-symbols-outlined text-primary">checklist</span> Task Manager
-                            </h3>
-                            <span
+                        <h3 class="font-bold text-lg text-[#111418] dark:text-white flex items-center gap-2">
+                            <span class="material-symbols-outlined text-primary">checklist</span> Task Manager
+                        </h3>
+                        <span
                                 class="text-xs bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 px-2 py-1 rounded-full text-gray-500 dark:text-gray-300">3
                                 Pending</span>
-                        </div>
-                        <div class="p-5 flex flex-col gap-4">
-                            <div class="flex gap-2">
-                                <input
+                    </div>
+                    <div class="p-5 flex flex-col gap-4">
+                        <div class="flex gap-2">
+                            <input
                                     class="flex-1 h-10 rounded-lg border border-[#dbe0e6] dark:border-gray-600 bg-white dark:bg-[#101922] px-3 text-sm placeholder:text-[#617589] focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all dark:text-white"
-                                    placeholder="Add a new task..." type="text" />
-                                <button
+                                    placeholder="Add a new task..." type="text"/>
+                            <button
                                     class="h-10 px-6 rounded-lg bg-primary hover:bg-blue-600 text-white text-sm font-bold shadow-sm transition-colors flex items-center">
-                                    <span class="material-symbols-outlined text-[20px] mr-1">add_circle</span> Add
-                                </button>
-                            </div>
-                            <div class="flex flex-col gap-2 max-h-[180px] overflow-y-auto pr-1 logger-scroll">
+                                <span class="material-symbols-outlined text-[20px] mr-1">add_circle</span> Add
+                            </button>
+                        </div>
+                        <div class="flex flex-col gap-2 max-h-[180px] overflow-y-auto pr-1 logger-scroll">
 
 
-                                <div
+                            <div
                                     class="flex items-center justify-between p-3 rounded-lg border border-[#f0f2f4] dark:border-gray-700 bg-white dark:bg-[#101922] hover:border-primary/50 transition-colors group/item">
-                                    <div class="flex items-center gap-3">
-                                        <div
+                                <div class="flex items-center gap-3">
+                                    <div
                                             class="size-5 rounded border border-gray-300 dark:border-gray-600 flex items-center justify-center cursor-pointer hover:border-primary">
-                                        </div>
-                                        <span class="text-sm text-[#111418] dark:text-gray-200">Review DOM Manipulation
+                                    </div>
+                                    <span class="text-sm text-[#111418] dark:text-gray-200">Review DOM Manipulation
                                             documentation</span>
-                                    </div>
-                                    <button
+                                </div>
+                                <button
                                         class="text-gray-400 hover:text-red-500 opacity-0 group-hover/item:opacity-100 transition-opacity">
-                                        <span class="material-symbols-outlined text-[20px]">delete</span>
-                                    </button>
-                                </div>
-
-
-                                <div
-                                    class="flex items-center justify-between p-3 rounded-lg border border-[#f0f2f4] dark:border-gray-700 bg-white dark:bg-[#101922] hover:border-primary/50 transition-colors group/item">
-                                    <div class="flex items-center gap-3">
-                                        <div
-                                            class="size-5 rounded border border-gray-300 dark:border-gray-600 flex items-center justify-center cursor-pointer hover:border-primary">
-                                        </div>
-                                        <span class="text-sm text-[#111418] dark:text-gray-200">Practice array methods
-                                            (map, filter, reduce)</span>
-                                    </div>
-                                    <button
-                                        class="text-gray-400 hover:text-red-500 opacity-0 group-hover/item:opacity-100 transition-opacity">
-                                        <span class="material-symbols-outlined text-[20px]">delete</span>
-                                    </button>
-                                </div>
-
-
-                                <div
-                                    class="flex items-center justify-between p-3 rounded-lg border border-[#f0f2f4] dark:border-gray-700 bg-white dark:bg-[#101922] hover:border-primary/50 transition-colors group/item">
-                                    <div class="flex items-center gap-3">
-                                        <div
-                                            class="size-5 rounded border-primary bg-primary flex items-center justify-center cursor-pointer">
-                                            <span class="material-symbols-outlined text-white text-[16px]">check</span>
-                                        </div>
-                                        <span class="text-sm text-gray-400 line-through">Setup development
-                                            environment</span>
-                                    </div>
-                                    <button
-                                        class="text-gray-400 hover:text-red-500 opacity-0 group-hover/item:opacity-100 transition-opacity">
-                                        <span class="material-symbols-outlined text-[20px]">delete</span>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div
-                        class="group flex flex-col bg-white dark:bg-[#1a2632] rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.04)] dark:shadow-none border border-transparent dark:border-gray-800 overflow-hidden hover:shadow-lg transition-all duration-300">
-                        <div
-                            class="p-5 border-b border-[#f0f2f4] dark:border-gray-700 flex justify-between items-center">
-                            <h3 class="font-bold text-lg text-[#111418] dark:text-white flex items-center gap-2">
-                                <span class="material-symbols-outlined text-primary">contrast</span> Theme Demo
-                            </h3>
-                        </div>
-                        <div
-                            class="p-6 flex flex-col items-center justify-center gap-6 flex-1 bg-gradient-to-br from-white to-gray-50 dark:from-[#1a2632] dark:to-[#101922]">
-                            <p class="text-center text-sm text-[#617589] dark:text-gray-400">Visual switch component
-                                state.</p>
-
-
-                            <label class="relative inline-flex items-center cursor-pointer">
-                                <input class="sr-only peer" type="checkbox" value="" />
-                                <div
-                                    class="w-14 h-7 bg-gray-200 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-6 after:w-6 after:transition-all dark:border-gray-600 peer-checked:bg-primary">
-                                </div>
-                                <span class="ms-3 text-sm font-medium text-gray-900 dark:text-gray-300">Dark Mode</span>
-                            </label>
-                            <div class="text-xs text-gray-400 dark:text-gray-500 font-mono">
-                                document.body.classList.toggle('dark')
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div
-                        class="group flex flex-col bg-white dark:bg-[#1a2632] rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.04)] dark:shadow-none border border-transparent dark:border-gray-800 overflow-hidden hover:shadow-lg transition-all duration-300 md:col-span-2 xl:col-span-3">
-                        <div
-                            class="p-5 border-b border-[#f0f2f4] dark:border-gray-700 flex justify-between items-center bg-[#101922] text-white">
-                            <h3 class="font-bold text-lg flex items-center gap-2">
-                                <span class="material-symbols-outlined text-green-400">terminal</span> Console Logger
-                            </h3>
-                            <span class="text-xs font-mono text-gray-400">v1.0.2</span>
-                        </div>
-                        <div class="flex flex-col md:flex-row h-full">
-
-
-                            <div class="p-5 flex-1 flex flex-col gap-3 border-r border-[#f0f2f4] dark:border-gray-700">
-                                <label class="text-sm font-semibold text-[#111418] dark:text-gray-200">Log
-                                    Message</label>
-                                <textarea
-                                    class="w-full flex-1 min-h-[80px] rounded-lg border border-[#dbe0e6] dark:border-gray-600 bg-white dark:bg-[#101922] p-3 text-sm placeholder:text-[#617589] focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all dark:text-white resize-none"
-                                    placeholder="Type something to log to the console..."></textarea>
-                                <div class="flex justify-end">
-                                    <button
-                                        class="h-9 px-4 rounded bg-primary hover:bg-blue-600 text-white text-sm font-medium shadow-sm transition-colors flex items-center gap-2">
-                                        <span class="material-symbols-outlined text-[18px]">send</span> Log Output
-                                    </button>
-                                </div>
+                                    <span class="material-symbols-outlined text-[20px]">delete</span>
+                                </button>
                             </div>
 
 
                             <div
-                                class="p-0 flex-1 bg-[#101922] font-mono text-xs md:text-sm overflow-hidden flex flex-col min-h-[160px]">
-                                <div
-                                    class="px-4 py-2 bg-gray-800 text-gray-400 text-xs border-b border-gray-700 flex justify-between">
-                                    <span>Output Stream</span>
-                                    <span class="cursor-pointer hover:text-white">Clear</span>
+                                    class="flex items-center justify-between p-3 rounded-lg border border-[#f0f2f4] dark:border-gray-700 bg-white dark:bg-[#101922] hover:border-primary/50 transition-colors group/item">
+                                <div class="flex items-center gap-3">
+                                    <div
+                                            class="size-5 rounded border border-gray-300 dark:border-gray-600 flex items-center justify-center cursor-pointer hover:border-primary">
+                                    </div>
+                                    <span class="text-sm text-[#111418] dark:text-gray-200">Practice array methods
+                                            (map, filter, reduce)</span>
                                 </div>
-                                <div class="p-4 flex-1 overflow-y-auto logger-scroll flex flex-col gap-1 text-gray-300">
-                                    <div class="flex gap-2">
-                                        <span class="text-blue-400 opacity-50">[10:42:01]</span>
-                                        <span>System initialized...</span>
+                                <button
+                                        class="text-gray-400 hover:text-red-500 opacity-0 group-hover/item:opacity-100 transition-opacity">
+                                    <span class="material-symbols-outlined text-[20px]">delete</span>
+                                </button>
+                            </div>
+
+
+                            <div
+                                    class="flex items-center justify-between p-3 rounded-lg border border-[#f0f2f4] dark:border-gray-700 bg-white dark:bg-[#101922] hover:border-primary/50 transition-colors group/item">
+                                <div class="flex items-center gap-3">
+                                    <div
+                                            class="size-5 rounded border-primary bg-primary flex items-center justify-center cursor-pointer">
+                                        <span class="material-symbols-outlined text-white text-[16px]">check</span>
                                     </div>
-                                    <div class="flex gap-2">
-                                        <span class="text-blue-400 opacity-50">[10:42:05]</span>
-                                        <span><span class="text-yellow-400">WARN:</span> DOM elements cached</span>
-                                    </div>
-                                    <div class="flex gap-2">
-                                        <span class="text-blue-400 opacity-50">[10:43:12]</span>
-                                        <span>User clicked "Greet" button</span>
-                                    </div>
-                                    <div class="flex gap-2">
-                                        <span class="text-blue-400 opacity-50">[10:43:12]</span>
-                                        <span class="text-green-400">&gt;&gt; Hello, Developer!</span>
-                                    </div>
+                                    <span class="text-sm text-gray-400 line-through">Setup development
+                                            environment</span>
+                                </div>
+                                <button
+                                        class="text-gray-400 hover:text-red-500 opacity-0 group-hover/item:opacity-100 transition-opacity">
+                                    <span class="material-symbols-outlined text-[20px]">delete</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <!-- ------- DARK MODE ------- -->
+                <div
+                        class="group flex flex-col bg-white dark:bg-[#1a2632] rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.04)] dark:shadow-none border border-transparent dark:border-gray-800 overflow-hidden hover:shadow-lg transition-all duration-300">
+                    <div
+                            class="p-5 border-b border-[#f0f2f4] dark:border-gray-700 flex justify-between items-center">
+                        <h3 class="font-bold text-lg text-[#111418] dark:text-white flex items-center gap-2">
+                            <span class="material-symbols-outlined text-primary">contrast</span> Theme Demo
+                        </h3>
+                    </div>
+                    <div
+                            class="p-6 flex flex-col items-center justify-center gap-6 flex-1 bg-gradient-to-br from-white to-gray-50 dark:from-[#1a2632] dark:to-[#101922]">
+                        <p class="text-center text-sm text-[#617589] dark:text-gray-400">Visual switch component
+                            state.</p>
+
+
+                        <label class="relative inline-flex items-center cursor-pointer">
+                            <input class="sr-only peer" type="checkbox" value=""/>
+                            <div
+                                    class="w-14 h-7 bg-gray-200 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-6 after:w-6 after:transition-all dark:border-gray-600 peer-checked:bg-primary">
+                            </div>
+                            <span class="ms-3 text-sm font-medium text-gray-900 dark:text-gray-300">Dark Mode</span>
+                        </label>
+                        <div class="text-xs text-gray-400 dark:text-gray-500 font-mono">
+                            document.body.classList.toggle('dark')
+                        </div>
+                    </div>
+                </div>
+
+
+                <div
+                        class="group flex flex-col bg-white dark:bg-[#1a2632] rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.04)] dark:shadow-none border border-transparent dark:border-gray-800 overflow-hidden hover:shadow-lg transition-all duration-300 md:col-span-2 xl:col-span-3">
+                    <div
+                            class="p-5 border-b border-[#f0f2f4] dark:border-gray-700 flex justify-between items-center bg-[#101922] text-white">
+                        <h3 class="font-bold text-lg flex items-center gap-2">
+                            <span class="material-symbols-outlined text-green-400">terminal</span> Console Logger
+                        </h3>
+                        <span class="text-xs font-mono text-gray-400">v1.0.2</span>
+                    </div>
+                    <div class="flex flex-col md:flex-row h-full">
+
+
+                        <div class="p-5 flex-1 flex flex-col gap-3 border-r border-[#f0f2f4] dark:border-gray-700">
+                            <label class="text-sm font-semibold text-[#111418] dark:text-gray-200">Log
+                                Message</label>
+                            <textarea
+                                    class="w-full flex-1 min-h-[80px] rounded-lg border border-[#dbe0e6] dark:border-gray-600 bg-white dark:bg-[#101922] p-3 text-sm placeholder:text-[#617589] focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all dark:text-white resize-none"
+                                    placeholder="Type something to log to the console..."></textarea>
+                            <div class="flex justify-end">
+                                <button
+                                        class="h-9 px-4 rounded bg-primary hover:bg-blue-600 text-white text-sm font-medium shadow-sm transition-colors flex items-center gap-2">
+                                    <span class="material-symbols-outlined text-[18px]">send</span> Log Output
+                                </button>
+                            </div>
+                        </div>
+
+
+                        <div
+                                class="p-0 flex-1 bg-[#101922] font-mono text-xs md:text-sm overflow-hidden flex flex-col min-h-[160px]">
+                            <div
+                                    class="px-4 py-2 bg-gray-800 text-gray-400 text-xs border-b border-gray-700 flex justify-between">
+                                <span>Output Stream</span>
+                                <span class="cursor-pointer hover:text-white">Clear</span>
+                            </div>
+                            <div class="p-4 flex-1 overflow-y-auto logger-scroll flex flex-col gap-1 text-gray-300">
+                                <div class="flex gap-2">
+                                    <span class="text-blue-400 opacity-50">[10:42:01]</span>
+                                    <span>System initialized...</span>
+                                </div>
+                                <div class="flex gap-2">
+                                    <span class="text-blue-400 opacity-50">[10:42:05]</span>
+                                    <span><span class="text-yellow-400">WARN:</span> DOM elements cached</span>
+                                </div>
+                                <div class="flex gap-2">
+                                    <span class="text-blue-400 opacity-50">[10:43:12]</span>
+                                    <span>User clicked "Greet" button</span>
+                                </div>
+                                <div class="flex gap-2">
+                                    <span class="text-blue-400 opacity-50">[10:43:12]</span>
+                                    <span class="text-green-400">&gt;&gt; Hello, Developer!</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </main>
-        <footer
+        </div>
+    </main>
+    <footer
             class="mt-auto border-t border-[#f0f2f4] dark:border-gray-800 bg-white dark:bg-[#1a2632] py-8 text-center">
-            <p class="text-[#617589] dark:text-gray-500 text-sm">© 2023 JavaScript Practice Dashboard. Built for
-                learning.</p>
-        </footer>
-    </div>
+        <p class="text-[#617589] dark:text-gray-500 text-sm">© 2023 JavaScript Practice Dashboard. Built for
+            learning.</p>
+    </footer>
+</div>
 
-    <script src="script.js"></script>
+<script src="script.js"></script>
 
 </body>
 
