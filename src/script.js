@@ -122,5 +122,129 @@ function updateCounter() {
     }
 }
 
-// ------- METODOS PARA CONTADOR -------
+// ------- TASK MANAGER -------
+const taskInput = document.querySelector('input[placeholder="Add a new task..."]');
+const addTaskBtn = taskInput.nextElementSibling;
+const taskList = document.querySelector('.logger-scroll');
+const pendingBadge = document.querySelector('.text-xs.rounded-full');
 
+let pendingTasks = 0;
+
+// Inicializar contador
+updatePendingCount();
+
+// Click botón Add
+addTaskBtn.addEventListener("click", addTask);
+
+// Enter en input
+taskInput.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") addTask();
+});
+
+// Event delegation (check / delete)
+taskList.addEventListener("click", handleTaskActions);
+
+function addTask() {
+    const taskText = taskInput.value.trim();
+    if (!taskText) return;
+
+    const taskItem = document.createElement("div");
+    taskItem.className =
+        "flex items-center justify-between p-3 rounded-lg border border-[#f0f2f4] dark:border-gray-700 bg-white dark:bg-[#101922] hover:border-primary/50 transition-colors group/item";
+
+    taskItem.innerHTML = `
+        <div class="flex items-center gap-3">
+            <div class="size-5 rounded border border-gray-300 dark:border-gray-600 flex items-center justify-center cursor-pointer hover:border-primary task-check"></div>
+            <span class="text-sm text-[#111418] dark:text-gray-200 task-text">${taskText}</span>
+        </div>
+        <button class="text-gray-400 hover:text-red-500 opacity-0 group-hover/item:opacity-100 transition-opacity delete-task">
+            <span class="material-symbols-outlined text-[20px]">delete</span>
+        </button>
+    `;
+
+    taskList.prepend(taskItem);
+    taskInput.value = "";
+
+    pendingTasks++;
+    updatePendingCount();
+}
+
+function handleTaskActions(e) {
+    const checkBtn = e.target.closest(".task-check");
+    const deleteBtn = e.target.closest(".delete-task");
+
+    if (checkBtn) toggleTask(checkBtn);
+    if (deleteBtn) deleteTask(deleteBtn);
+}
+
+function toggleTask(checkBtn) {
+    const taskItem = checkBtn.closest("div.flex.items-center.justify-between");
+    const taskText = taskItem.querySelector(".task-text");
+    const isCompleted = checkBtn.classList.contains("bg-primary");
+
+    if (isCompleted) {
+        // Desmarcar
+        checkBtn.className =
+            "size-5 rounded border border-gray-300 dark:border-gray-600 flex items-center justify-center cursor-pointer hover:border-primary task-check";
+        checkBtn.innerHTML = "";
+        taskText.className = "text-sm text-[#111418] dark:text-gray-200 task-text";
+        pendingTasks++;
+    } else {
+        // Marcar como completada
+        checkBtn.classList.add("bg-primary", "border-primary");
+        checkBtn.innerHTML = `<span class="material-symbols-outlined text-white text-[16px]">check</span>`;
+        taskText.className = "text-sm text-gray-400 line-through task-text";
+        pendingTasks--;
+    }
+
+    updatePendingCount();
+}
+
+function deleteTask(deleteBtn) {
+    const taskItem = deleteBtn.closest("div.flex.items-center.justify-between");
+    const isCompleted = taskItem.querySelector(".task-check").classList.contains("bg-primary");
+
+    if (!isCompleted) pendingTasks--;
+
+    taskItem.remove();
+    updatePendingCount();
+}
+
+function updatePendingCount() {
+    pendingBadge.textContent = `${pendingTasks} Pending`;
+}
+
+// ------- DARK MODE -------
+const darkModeToggle = document.getElementById("darkModeToggle");
+const themeLabel = document.getElementById("themeLabel");
+const html = document.documentElement;
+
+initTheme();
+
+darkModeToggle.addEventListener("change", toggleTheme);
+
+function toggleTheme() {
+    const isDark = darkModeToggle.checked;
+
+    html.classList.toggle("dark", isDark);
+    html.classList.toggle("light", !isDark);
+
+    updateLabel(isDark);
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+}
+
+function initTheme() {
+    const savedTheme = localStorage.getItem("theme");
+
+    const isDark = savedTheme === "dark";
+
+    html.classList.toggle("dark", isDark);
+    html.classList.toggle("light", !isDark);
+
+    darkModeToggle.checked = isDark;
+    updateLabel(isDark);
+}
+
+function updateLabel(isDark) {
+    themeLabel.textContent = isDark ? "Dark Mode On" : "Dark Mode Off";
+}
