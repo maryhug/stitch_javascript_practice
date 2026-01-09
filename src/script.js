@@ -20,15 +20,23 @@ function handleTyping() {
 
 function nameSend() {
     const value = nameInput.value;
-
     clearTimeout(typingTimer);
 
     if (value.trim() !== "") {
         const nameFormatted = formatName(value);
         greetMessage.textContent = `Hi! ${nameFormatted}`;
+
+        // --- AGREGA ESTO ---
+        systemLog(`Greeting generated for user: "${nameFormatted}"`, 'success');
+        // -------------------
+
         nameInput.value = "";
     } else {
         greetMessage.textContent = "Waiting for input...";
+
+        // --- AGREGA ESTO ---
+        systemLog('Validation failed: Name input was empty', 'warn');
+        // -------------------
     }
 }
 
@@ -49,17 +57,21 @@ input.addEventListener("input", resetIfEmpty);
 
 function validateAge() {
     const age = Number(input.value);
-
     clearColors();
 
-    if (!input.value.trim()) return;
+    if (!input.value.trim()) {
+        systemLog('Age check error: Empty input', 'error');
+        return;
+    };
 
     if (age >= 18) {
         button.textContent = "Access Granted";
         button.classList.add("bg-green-600", "hover:bg-green-700");
+        systemLog(`Age verification passed (${age}). Access Granted.`, 'success');
     } else {
         button.textContent = "Access Denied";
         button.classList.add("bg-red-600", "hover:bg-red-700");
+        systemLog(`Age verification failed (${age}). Access Denied.`, 'warn');
     }
 }
 
@@ -111,8 +123,6 @@ function resetCounter() {
 
 function updateCounter() {
     counterValue.textContent = count;
-
-    // Limpia colores anteriores
     counterValue.classList.remove("text-blue-500", "text-red-500");
 
     if (count > 0) {
@@ -120,6 +130,17 @@ function updateCounter() {
     } else if (count < 0) {
         counterValue.classList.add("text-red-500");
     }
+
+    // --- AGREGA ESTO ---
+    systemLog(`Counter updated. New value: ${count}`);
+    // -------------------
+}
+
+// También puedes agregar logs en el Reset
+function resetCounter() {
+    count = 0;
+    updateCounter();
+    systemLog('Counter reset triggered', 'warn'); // Sobrescribe el log normal si quieres ser específico
 }
 
 // ------- TASK MANAGER -------
@@ -167,6 +188,10 @@ function addTask() {
 
     pendingTasks++;
     updatePendingCount();
+
+    // --- AGREGA ESTO ---
+    systemLog(`New task added: "${taskText}"`, 'info');
+    // -------------------
 }
 
 function handleTaskActions(e) {
@@ -219,32 +244,140 @@ const darkModeToggle = document.getElementById("darkModeToggle");
 const themeLabel = document.getElementById("themeLabel");
 const html = document.documentElement;
 
+// Nuevas referencias para el botón del Header
+const headerThemeBtn = document.getElementById("headerThemeBtn");
+const headerIcon = headerThemeBtn.querySelector(".material-symbols-outlined");
+
+// Inicializar estado al cargar
 initTheme();
 
+// Evento: Switch de la tarjeta (Checkbox)
 darkModeToggle.addEventListener("change", toggleTheme);
+
+// Evento: Botón del Header
+headerThemeBtn.addEventListener("click", () => {
+    // Invertimos el estado del checkbox y forzamos la actualización
+    darkModeToggle.checked = !darkModeToggle.checked;
+    toggleTheme();
+});
 
 function toggleTheme() {
     const isDark = darkModeToggle.checked;
 
+    // 1. Cambiar clases en el HTML
     html.classList.toggle("dark", isDark);
     html.classList.toggle("light", !isDark);
 
-    updateLabel(isDark);
+    // 2. Guardar preferencia
     localStorage.setItem("theme", isDark ? "dark" : "light");
+
+    // 3. Actualizar textos e iconos
+    updateUI(isDark);
+
+    // 4. Loggear en consola (Si tienes el logger activo)
+    if (typeof systemLog === "function") {
+        systemLog(`Theme changed to ${isDark ? 'Dark' : 'Light'} Mode`, 'system');
+    }
 }
 
 function initTheme() {
     const savedTheme = localStorage.getItem("theme");
-
     const isDark = savedTheme === "dark";
 
+    // Aplicar clases iniciales
     html.classList.toggle("dark", isDark);
     html.classList.toggle("light", !isDark);
 
+    // Sincronizar el checkbox
     darkModeToggle.checked = isDark;
-    updateLabel(isDark);
+
+    // Actualizar UI
+    updateUI(isDark);
 }
 
-function updateLabel(isDark) {
+function updateUI(isDark) {
+    // Actualizar texto del switch
     themeLabel.textContent = isDark ? "Dark Mode On" : "Dark Mode Off";
+
+    // Actualizar icono del botón Header (Luna o Sol)
+    headerIcon.textContent = isDark ? "light_mode" : "dark_mode";
 }
+
+// ------- CONSOLE LOGGER LOGIC -------
+
+// Seleccionamos los elementos basándonos en la estructura del HTML
+// Buscamos la tarjeta que contiene el icono de terminal para asegurar el contexto
+const consoleCard = document.querySelector('.material-symbols-outlined.text-green-400').closest('.group');
+const logTextarea = consoleCard.querySelector('textarea');
+const logSubmitBtn = consoleCard.querySelector('button');
+const logContainer = consoleCard.querySelector('.logger-scroll');
+const clearLogBtn = consoleCard.querySelector('.cursor-pointer'); // El botón "Clear"
+
+// Evento para el botón "Log Output" (Manual)
+logSubmitBtn.addEventListener('click', () => {
+    const text = logTextarea.value.trim();
+    if (text) {
+        systemLog(text, 'manual');
+        logTextarea.value = '';
+    }
+});
+
+// Evento para limpiar la consola
+clearLogBtn.addEventListener('click', () => {
+    logContainer.innerHTML = '';
+    systemLog('Console cleared', 'system');
+});
+
+/**
+ * Función central para enviar mensajes a la consola visual
+ * @param {string} message - El texto a mostrar
+ * @param {string} type - 'info', 'success', 'warn', 'error', 'manual'
+ */
+function systemLog(message, type = 'info') {
+    const now = new Date();
+    const timeString = now.toLocaleTimeString('en-US', { hour12: false });
+
+    // Crear el elemento de log
+    const logItem = document.createElement('div');
+    logItem.className = "flex gap-2 font-mono text-xs md:text-sm hover:bg-white/5 p-1 rounded transition-colors";
+
+    // Definir colores según el tipo de mensaje
+    let msgColorClass = 'text-gray-300';
+    let prefix = '';
+
+    switch(type) {
+        case 'warn':
+            msgColorClass = 'text-orange-300';
+            prefix = '<span class="text-yellow-400 font-bold mr-1">WARN:</span>';
+            break;
+        case 'error':
+            msgColorClass = 'text-red-400';
+            prefix = '<span class="text-red-500 font-bold mr-1">ERR:</span>';
+            break;
+        case 'success':
+            msgColorClass = 'text-green-400';
+            prefix = '>> ';
+            break;
+        case 'manual':
+            msgColorClass = 'text-white font-semibold';
+            prefix = '$ ';
+            break;
+        case 'system':
+            msgColorClass = 'text-blue-300 italic';
+            break;
+    }
+
+    logItem.innerHTML = `
+        <span class="text-blue-500 opacity-50 shrink-0">[${timeString}]</span>
+        <span class="${msgColorClass} break-all">${prefix}${message}</span>
+    `;
+
+    // Agregar al contenedor
+    logContainer.appendChild(logItem);
+
+    // Auto-scroll hacia abajo
+    logContainer.scrollTop = logContainer.scrollHeight;
+}
+
+// Mensaje inicial al cargar
+systemLog('Logger module connected.', 'system');
